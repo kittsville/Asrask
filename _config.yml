@@ -1,0 +1,13 @@
+exclude: ['LICENSE', 'README.md']
+markdown: kramdown
+kramdown:
+  input: GFM
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-sitemap
+sass:
+  style: compressed
+webrick:
+  headers:
+    X-Clacks-Overhead: GNU Terry Pratchett
