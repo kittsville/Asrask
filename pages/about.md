@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: Raofu is a brigading detection tool. It can identify which users are disrupting a Reddit submission's comments.
 permalink: /about/
 ---
 

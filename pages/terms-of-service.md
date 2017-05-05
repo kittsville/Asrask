@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Terms of Service
+description: Raofu's Terms of Service describe the conditions by which access to Raofu is granted.
 permalink: /terms/
 ---
 

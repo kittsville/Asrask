@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Privacy Policy
+description: Details of the data stored by Raofu, its ownership, access and how to delete it.
 permalink: /privacy/
 ---
 
