@@ -15,7 +15,7 @@ This page explains what data Raofu stores, who has access to it and how you can 
 	- Username of every suspected user
 	- Link to every suspected user's comment in the thread
 	- The proportion of their participation in the brigading and brigaded communities
-- The proportion of users' participation in subreddits (e.g. `kittsville 0.347 /r/pics`)
+- A cache of the proportion of users' participation in subreddits (e.g. `kittsville 0.347 /r/pics`)
 
 ### Ownership of Data
 
@@ -33,3 +33,4 @@ All data created using Raofu is owned by Raofu's administrators. I'll change thi
 
 - You can delete your account
 - All analyses created by your account are deleted as well
+- Caches generated as a result of an analysis you ran are not deleted when you delete your account
