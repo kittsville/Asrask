@@ -1,3 +1,18 @@
+title: Raofu
+description: Raofu identifies users on Reddit responsible for brigading.
+creator:
+  name: Kit Maywood
+  url: http://twitter.com/kittsville
+  twitter: kittsville
+navigation:
+  - title: About
+    url: /about/
+  - title: FAQ
+    url: /faq/
+  - title: Terms of Service
+    url: /terms/
+  - title: Privacy
+    url: /privacy/
 exclude: ['LICENSE', 'README.md']
 markdown: kramdown
 kramdown:

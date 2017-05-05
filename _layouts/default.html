@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<link rel="stylesheet" href="/assets/styles/material.red-blue.min.css">
+	<link rel="stylesheet" href="/assets/styles/styles.css">
+	<script defer src="/assets/scripts/material.min.js"></script>
+	
+	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+	
+	{% include meta_tags.html %}
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="wrapper" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+	<!-- Top header -->
+	<header class="mdl-layout__header mdl-layout__header--scroll">
+		<div class="mdl-layout__header-row">
+			<!-- App name or current page -->
+			<span id="page-name" class="mdl-layout-title">{{ page.title }}</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Top Right Navigation -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="/about">About</a>
+				<a class="mdl-navigation__link" href="/privacy">Privacy</a>
+			</nav>
+		</div>
+	</header>
+	
+	{% include navigation.html %}
+	
+	<main class="mdl-layout__content">
+		{{ content }}
+	</main>
+</div>
+</body>
+</html>

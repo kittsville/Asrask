@@ -1,0 +1,15 @@
+<div id="sidebar" class="mdl-layout__drawer">
+	<span class="mdl-layout-title"><a class="" href="/">Raofu</a></span>
+	<nav class="mdl-navigation">
+		{% for item in site.navigation %}
+			{% if item.title %}
+				{% if item.url == page.url %}
+				{% assign current = 'current' %}
+				{% else %}
+				{% assign current = nil %}
+				{% endif %}
+				<a class="mdl-navigation__link {{ current }}" href="{{ item.url }}">{{ item.title }}</a>
+			{% endif %}
+		{% endfor %}
+	</nav>
+</div>
