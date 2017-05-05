@@ -9,6 +9,13 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<link rel="stylesheet" href="/assets/styles/material.red-blue.min.css">
 	<link rel="stylesheet" href="/assets/styles/styles.css">
+	
+	{% if page.styles %}
+		{% for stylesheet in page.styles %}
+			<link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css">
+		{% endfor %}
+	{% endif %}
+	
 	<script defer src="/assets/scripts/material.min.js"></script>
 	
 	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
