@@ -24,6 +24,10 @@ html, body {
 	border-radius: 2px;
 	padding: 80px 56px;
 	margin-bottom: 80px;
+	
+	.is-small-screen & {
+		padding: 40px 28px;
+	}
 }
 
 .mdl-card__title.flaired {
