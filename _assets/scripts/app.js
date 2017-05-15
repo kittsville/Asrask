@@ -6,5 +6,5 @@
 #= require app/pages
 
 function launchApp() {
-	console.log('Launched');
+	this.nav = new navManager();
 }
