@@ -26,22 +26,9 @@
 </head>
 <body>
 <div id="wrapper" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-	<!-- Top header -->
-	<header class="mdl-layout__header mdl-layout__header--scroll">
-		<div class="mdl-layout__header-row">
-			<!-- App name or current page -->
-			<span id="page-name" class="mdl-layout-title">{{ page.title }}</span>
-			<!-- Add spacer, to align navigation to the right -->
-			<div class="mdl-layout-spacer"></div>
-			<!-- Top Right Navigation -->
-			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<a class="mdl-navigation__link" href="/about/">About</a>
-				<a class="mdl-navigation__link" href="/privacy/">Privacy</a>
-			</nav>
-		</div>
-	</header>
 	
 	{% include navigation.html %}
+	{% include header.html %}
 	
 	<main class="mdl-layout__content">
 		{{ content }}
