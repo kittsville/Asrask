@@ -1,0 +1,27 @@
+---
+---
+<div id="wrapper" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+	{% include header.html progress_bar="True" %}
+	
+	{% include app_navigation.html %}
+	
+	<!-- App Pages -->
+	<main class="mdl-layout__content">
+		<div id="the-page" class="page"></div>
+	</main>
+</div>
+<!-- Notifications -->
+<div id="notifications" class="mdl-js-snackbar mdl-snackbar">
+	<div class="mdl-snackbar__text"></div>
+	<button class="mdl-snackbar__action" type="button"></button>
+</div>
+<!-- Critical Error Overlay -->
+<dialog id="error-dialog" class="mdl-dialog">
+	<h3 class="mdl-dialog__title">Oh Noes!</h3>
+	<div class="mdl-dialog__content">
+		<p id="error-message"></p>
+		</div>
+	<div class="mdl-dialog__actions">
+		<button id="page-reload" type="button" class="mdl-button">Refresh Page</button>
+	</div>
+</dialog>

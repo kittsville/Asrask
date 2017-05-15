@@ -7,16 +7,15 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-	<link rel="stylesheet" href="/assets/styles/material.red-blue.min.css">
-	<link rel="stylesheet" href="/assets/styles/styles.css">
+	{% stylesheet styles %}
 	
 	{% if page.styles %}
-		{% for stylesheet in page.styles %}
-			<link rel="stylesheet" href="/assets/styles/{{ stylesheet }}.css">
+		{% for stylesheet_name in page.styles %}
+			{% stylesheet {{stylesheet_name}} %}
 		{% endfor %}
 	{% endif %}
 	
-	<script defer src="/assets/scripts/material.min.js"></script>
+	{% javascript material.min defer %}
 	
 	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 	

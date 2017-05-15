@@ -5,6 +5,8 @@ creator:
   url: http://twitter.com/kittsville
   twitter: kittsville
 navigation:
+  - title: App
+    url: /a/
   - title: About
     url: /about/
   - title: News
@@ -15,6 +17,16 @@ navigation:
     url: /terms/
   - title: Privacy
     url: /privacy/
+app_navigation:
+  - title: Results
+    url: /a/results/
+  - title: New
+    url: /a/results/new/
+  - title: Terms of Service
+    url: /terms/
+  - title: Privacy
+    url: /privacy/
+rendant_api: http://api.raofu.localhost/v1
 exclude: ['LICENSE', 'README.md']
 markdown: kramdown
 kramdown:
@@ -23,6 +35,16 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-sitemap
+  - jekyll-assets
+  - uglifier
+assets:
+  features:
+    liquid: true
+  sources:
+    - _assets/scripts
+    - _assets/styles
+  js_compressor:  uglifier
+  css_compressor: sass
 sass:
   style: compressed
 webrick:

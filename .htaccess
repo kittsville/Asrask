@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
+    # Handle requests to non-static pages
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} ^/a/
+    RewriteRule ^ app.html [L]
+</IfModule>
+
+ErrorDocument 404 /errors/404.html
+
+# BEGIN PRATCHETT
+<IfModule headers_module>
+    header set X-Clacks-Overhead "GNU Terry Pratchett"
+</IfModule> 
+# END PRACTCHETT

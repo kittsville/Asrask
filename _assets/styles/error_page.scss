@@ -1,12 +1,12 @@
----
----
-
-.not-found {
+.error-page {
 	margin-top: 30px;
 	color: #757575;
 	text-align: center;
 	i {
 		font-size: 200px;
+	}
+	
+	i.rotate {
 		-webkit-animation:spin 12s linear infinite;
 		-moz-animation:spin 12s linear infinite;
 		animation:spin 12s linear infinite;
