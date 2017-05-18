@@ -1,4 +1,4 @@
-function APIRequest(endpoint, params) {
+function apiRequest(endpoint, params) {
 	var params       = params || {},
 	httpRequest      = new XMLHttpRequest(),
 	httpMethod       = params.method || 'GET',                 // Sets HTTP Method, default is GET
