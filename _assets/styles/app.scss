@@ -1,2 +1,22 @@
 //= require styles
 //= require material.red-blue.min
+
+/* Top loading bar */
+#loading {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#loading.active {
+	display: block;
+}
+
+@media screen and (min-width:1024px) {
+	#loading > * {
+		-webkit-animation-duration: 3s;
+		animation-duration: 3s /* Apply media queries */
+	}
+}
