@@ -1,8 +1,8 @@
 //= require styles
 //= require material.red-blue.min
 
-/* Top loading bar */
-#loading {
+/* Top loading/activity bar */
+#activity {
 	display: none;
 	position: absolute;
 	top: 0px;
@@ -10,12 +10,12 @@
 	width: 100%;
 }
 
-#loading.active {
+#activity.active {
 	display: block;
 }
 
 @media screen and (min-width:1024px) {
-	#loading > * {
+	#activity > * {
 		-webkit-animation-duration: 3s;
 		animation-duration: 3s /* Apply media queries */
 	}
