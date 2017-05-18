@@ -1,5 +1,7 @@
 class navManager {
-	constructor(){
+	constructor(wrapper){
+		this.wrapper         = wrapper;
+		
 		// Ordered from most to least specific
 		this.pageTypes = [
 			newResultPage,
@@ -49,7 +51,10 @@ class navManager {
 				}
 			}
 			
-			this.page = new pageType(names);
+			this.page = new pageType(
+				this.wrapper,
+				names
+			);
 		}
 	}
 }

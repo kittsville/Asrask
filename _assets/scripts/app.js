@@ -9,5 +9,7 @@
 #= require app/pages/newResult
 
 function launchApp() {
-	this.nav = new navManager();
+	let wrapper     = document.getElementById('page-wrapper');
+	
+	this.nav = new navManager(wrapper);
 }
