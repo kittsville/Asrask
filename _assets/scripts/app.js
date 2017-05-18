@@ -2,6 +2,7 @@
 #= require app/notification
 #= require app/navigation
 #= require app/template
+#= require app/activity
 #= require app/api
 #= require app/pages
 #= require app/pages/results
@@ -9,7 +10,9 @@
 #= require app/pages/newResult
 
 function launchApp() {
-	let wrapper     = document.getElementById('page-wrapper');
+	let wrapper     = document.getElementById('page-wrapper'),
+	activitySpinner = document.getElementById('activity'),
+	activityManager = new activityIndicator(activitySpinner);
 	
-	this.nav = new navManager(wrapper);
+	this.nav = new navManager(wrapper, activityManager);
 }

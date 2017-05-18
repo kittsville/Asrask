@@ -1,6 +1,7 @@
 class navManager {
-	constructor(wrapper){
+	constructor(wrapper, activityManager){
 		this.wrapper         = wrapper;
+		this.activityManager = activityManager;
 		
 		// Ordered from most to least specific
 		this.pageTypes = [
@@ -53,6 +54,7 @@ class navManager {
 			
 			this.page = new pageType(
 				this.wrapper,
+				this.activityManager,
 				names
 			);
 		}
