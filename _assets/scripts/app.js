@@ -8,6 +8,7 @@
 #= require app/pages/results
 #= require app/pages/result
 #= require app/pages/newResult
+#= require app/pages/home
 
 function launchApp() {
 	let wrapper     = document.getElementById('page-wrapper'),

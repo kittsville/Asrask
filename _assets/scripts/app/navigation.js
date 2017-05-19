@@ -8,6 +8,7 @@ class navManager {
 			newResultPage,
 			resultPage,
 			resultsPage,
+			homePage,
 		];
 		
 		this.dispatcher = {};
