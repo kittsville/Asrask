@@ -5,10 +5,10 @@ function apiRequest(endpoint, params) {
 	showActivity     = httpMethod !== 'GET',
 	successCallback  = params.success || function(){},         // Optional AJAX success callback
 	failureCallback  = params.fail || function(httpRequest) {  // Optional AJAX failure callback
-		UserNotifications.addNotification('Something went wrong. Try reloading the page');
+		alert('Something went wrong. Try reloading the page');
 	},
 	errorCallback    = params.error || function(errorObject) { // Optional API error callback
-		UserNotifications.addNotification(errorObject.error);
+		alert(errorObject.error);
 	},
 	responseJSON     = {},
 	requestCompleted = function() {
