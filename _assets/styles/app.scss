@@ -1,6 +1,15 @@
 //= require styles
 //= require material.red-blue.min
 
+main {
+	background: url(/assets/images/background.png) no-repeat center center;
+	background-size: 250px;
+	
+	.is-small-screen & {
+		background-size: 200px;
+	}
+}
+
 /* Top loading/activity bar */
 #activity {
 	display: none;
