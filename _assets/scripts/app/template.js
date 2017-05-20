@@ -82,7 +82,7 @@ class tableGenerator {
 		// BODY
 		data.entries.forEach(function(entry) {
 			let row  = document.createElement('tr'),
-			user     = entry.thing,
+			user     = entry.user,
 			username = this._genTextCell(),
 			alpha    = this._subCell(entry.alpha_participation),
 			beta     = this._subCell(entry.beta_participation),
