@@ -25,7 +25,7 @@ class resultPage extends appPage {
 		let generator = new tableGenerator(),
 		table         = generator.genUserTable(response.data);
 		
-		this.wrapper.appendChild(table);
+		this.setPage(table);
 		
 		this.activityManager.endActivity(this.activityId);
 	}

@@ -4,6 +4,14 @@ class appPage {
 		this.activityManager = activityManager;
 	}
 	
+	setPage(content) {
+		this.wrapper.innerHTML = '';
+		
+		this.wrapper.appendChild(content);
+		
+		componentHandler.upgradeElements(this.wrapper);
+	}
+	
 	// Previously loaded page returned to
 	refocus() {}
 	
