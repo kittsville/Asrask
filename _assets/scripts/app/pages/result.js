@@ -27,6 +27,8 @@ class resultPage extends appPage {
 		
 		this.setPage(table);
 		
+		this.title = 'Thread Analysis';
+		
 		this.activityManager.endActivity(this.activityId);
 	}
 	
