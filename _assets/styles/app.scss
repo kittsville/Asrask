@@ -10,6 +10,26 @@ main {
 	}
 }
 
+table.brigading-users {
+	th {
+		height: 34px;
+		
+		&[rowspan="2"] {
+			vertical-align: top;
+			line-height: 44px;
+		}
+		
+		&.participation {
+			text-align: center;
+			padding-bottom: 0px;
+		}
+		
+		&.comments {
+			text-align: right;
+		}
+	}
+}
+
 /* Top loading/activity bar */
 #activity {
 	display: none;
