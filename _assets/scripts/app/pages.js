@@ -1,10 +1,16 @@
 class appPage {
-	constructor(wrapper, activityManager) {
+	constructor(wrapper, activityManager, names) {
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
 		this.titleSuffix     = ' - Raofu';
 		this.titleElement    = document.getElementsByTagName('title')[0];
 		this.metaTitles      = document.getElementsByClassName('title');
+		
+		for (name in names) {
+			this[name] = names[name];
+		}
+		
+		this.loadPage();
 	}
 	
 	setPage(content) {

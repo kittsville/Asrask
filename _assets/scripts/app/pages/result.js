@@ -1,14 +1,6 @@
 #= require app/pages
 
 class resultPage extends appPage {
-	constructor(wrapper, activityManager, names) {
-		super(wrapper, activityManager);
-		
-		this.resultId = names.resultId;
-		
-		this.loadPage();
-	}
-	
 	loadPage() {
 		this.activityId = this.activityManager.startActivity(function(){console.log('stopped');});
 		
