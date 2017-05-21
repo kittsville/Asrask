@@ -55,9 +55,9 @@ class tableGenerator {
 		
 		var linkBase = this.commentBase + data.alpha.name + '/comments/' + data.thread + '//';
 		
-		username.rowSpan   = 2;
-		comments.rowSpan   = 2;
-		subs.colSpan       = 2;
+		username.rowSpan = 2;
+		comments.rowSpan = 2;
+		subs.colSpan     = 2;
 		
 		username.classList.add('username');
 		subs.classList.add('participation');
@@ -65,7 +65,7 @@ class tableGenerator {
 		
 		username.textContent = 'Username';
 		subs.textContent     = 'Participation';
-		comments.textContent  = 'Comments';
+		comments.textContent = 'Comments';
 		
 		hRow.appendChild(username);
 		hRow.appendChild(subs);
