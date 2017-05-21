@@ -49,11 +49,11 @@ class tableGenerator {
 		subRow   = document.createElement('tr'),
 		username = this._getTextHeader(),
 		subs     = this._getTextHeader(),
-		alpha    = this.subHeader(data.alpha),
+		alpha    = this.subHeader(data.thread.subreddit),
 		beta     = this.subHeader(data.beta),
 		comments = this._getTextHeader();
 		
-		var linkBase = this.commentBase + data.alpha.name + '/comments/' + data.thread + '//';
+		var linkBase = this.commentBase + alpha.name + '/comments/' + data.thread.reddit_id + '//';
 		
 		username.rowSpan = 2;
 		comments.rowSpan = 2;
