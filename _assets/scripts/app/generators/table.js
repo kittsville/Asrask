@@ -1,5 +1,9 @@
-class tableGenerator {
+#= require app/generator
+
+class tableGenerator extends generator {
 	constructor() {
+		super();
+		
 		this.nonNum      = 'mdl-data-table__cell--non-numeric';
 		this.userBase    = 'https://reddit.com/user/';
 		this.commentBase = 'https://reddit.com/r/';

@@ -1,7 +1,7 @@
 #= require material.min
 #= require app/notification
 #= require app/navigation
-#= require app/template
+#= require app/generators/table
 #= require app/activity
 #= require app/api
 #= require app/pages
