@@ -34,6 +34,19 @@ class navManager {
 		url     = url.substring(0, url.length-1);
 		
 		this.setPage(url);
+		
+		 setTimeout(this.deferredSetup.bind(this), 50);
+	}
+	
+	// Performs non-immediate app setup
+	deferredSetup() {
+		document.querySelectorAll('#sidebar a').forEach(function(link) {
+			this.handleLink(link);
+		}, this);
+	}
+	
+	handleLink(link) {
+		link.addEventListener('click', this.onClick.bind(this));
 	}
 	
 	onClick(e) {

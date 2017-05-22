@@ -6,7 +6,7 @@ class generator {
 	_genLink() {
 		let link = document.createElement('a');
 		
-		link.addEventListener('click', this.navManager.onClick.bind(this.navManager));
+		this.navManager.handleLink(link);
 		
 		return link;
 	}
