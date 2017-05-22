@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /a/
+Disallow: /A/
+Disallow: /app.html
+Disallow: /assets/app-body.html
