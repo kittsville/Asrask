@@ -2,6 +2,7 @@ class navManager {
 	constructor(wrapper, activityManager){
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
+		this.appUrl          = '{{ site.app_url }}';
 		
 		// Ordered from most to least specific
 		this.pageTypes = [
@@ -24,14 +25,36 @@ class navManager {
 			i += 1 + pageType.route.names.length;
 		}, this);
 		
-		let routeMatcher = new RegExp(
+		this.routeMatcher = new RegExp(
 			'^('  + routePatterns.join(')|(') + ')$', 
 			'gi'
-		),
-		uri = window.location.pathname.substring(3);
-		uri = uri.substring(0, uri.length-1);
+		);
 		
-		let matches = routeMatcher.exec(uri);
+		let url = window.location.pathname.substring(3);
+		url     = url.substring(0, url.length-1);
+		
+		this.setPage(url);
+	}
+	
+	onClick(e) {
+		let url = e.target.href;
+		
+		if (url.startsWith(this.appUrl)) {
+			e.preventDefault();
+			
+			url = url.substring(this.appUrl.length);
+			
+			if (url.endsWith('/')) {
+				url = url.substring(0, url.length - 1);
+			}
+			
+			this.setPage(url);
+		}
+	}
+	
+	setPage(url) {
+		this.routeMatcher.lastIndex = 0;
+		let matches = this.routeMatcher.exec(url);
 		
 		if (matches == null) {
 			throw 404;

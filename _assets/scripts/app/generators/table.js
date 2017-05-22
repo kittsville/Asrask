@@ -91,7 +91,7 @@ class tableGenerator extends generator {
 			alpha    = this._subCell(entry.alpha_participation),
 			beta     = this._subCell(entry.beta_participation),
 			comments = this._genTextCell(),
-			userLink = document.createElement('a');
+			userLink = this._genLink();
 			
 			userLink.href        = this.userBase + user.name;
 			userLink.textContent = '/u/' + user.name;
@@ -99,7 +99,7 @@ class tableGenerator extends generator {
 			let last = entry.comments.length - 1;
 			
 			entry.comments.forEach(function(commentId, index) {
-				var commentLink         = document.createElement('a');
+				var commentLink         = this._genLink();
 				commentLink.href        = linkBase + commentId + '/?context=99';
 				commentLink.textContent = commentId;
 				
