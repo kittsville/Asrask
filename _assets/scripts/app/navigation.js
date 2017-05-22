@@ -56,6 +56,7 @@ class navManager {
 			this.page = new pageType(
 				this.wrapper,
 				this.activityManager,
+				this,
 				names
 			);
 		}

@@ -1,7 +1,8 @@
 class appPage {
-	constructor(wrapper, activityManager, names) {
+	constructor(wrapper, activityManager, navManager, names) {
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
+		this.navManager      = navManager;
 		this.titleSuffix     = ' - Raofu';
 		this.titleElement    = document.getElementsByTagName('title')[0];
 		this.metaTitles      = document.getElementsByClassName('title');
