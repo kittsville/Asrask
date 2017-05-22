@@ -57,7 +57,7 @@ class tableGenerator extends generator {
 		beta     = this.subHeader(data.beta),
 		comments = this._getTextHeader();
 		
-		var linkBase = this.commentBase + alpha.name + '/comments/' + data.thread.reddit_id + '//';
+		var linkBase = this.commentBase + data.thread.subreddit.name + '/comments/' + data.thread.reddit_id + '//';
 		
 		username.rowSpan = 2;
 		comments.rowSpan = 2;
