@@ -5,6 +5,8 @@ class newResultPage extends appPage {
 		console.log('Loaded new result page');
 		
 		this.title = 'New Analysis';
+		
+		this.setPage();
 	}
 	
 	static get route() {

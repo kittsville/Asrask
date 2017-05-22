@@ -14,8 +14,13 @@ class appPage {
 		this.loadPage();
 	}
 	
-	setPage(content) {
+	setPage(content = null) {
 		this.wrapper.innerHTML = '';
+		
+		// Allows page to be blanked
+		if (content == null) {
+			return;
+		}
 		
 		this.wrapper.appendChild(content);
 		

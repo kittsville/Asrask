@@ -5,6 +5,8 @@ class resultsPage extends appPage {
 		console.log('Loaded results page');
 		
 		this.title = 'Results';
+		
+		this.setPage();
 	}
 	
 	static get route() {

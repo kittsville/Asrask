@@ -5,6 +5,8 @@ class homePage extends appPage {
 		console.log('Loaded homepage');
 		
 		this.title = 'Home';
+		
+		this.setPage();
 	}
 	
 	static get route() {
