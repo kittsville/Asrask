@@ -3,6 +3,8 @@
 class newResultPage extends appPage {
 	loadPage() {
 		console.log('Loaded new result page');
+		
+		this.title = 'New Analysis';
 	}
 	
 	static get route() {
