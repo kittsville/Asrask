@@ -5,6 +5,8 @@ class activityIndicator {
 		this.activities = {};
 		this.count      = 0;
 		this.spinning   = false;
+		
+		window.addEventListener('keydown',  this.onKeyDown.bind(this));
 	}
 	
 	updateSpinner() {
@@ -49,5 +51,12 @@ class activityIndicator {
 		this.count--;
 		
 		this.updateSpinner();
+	}
+	
+	onKeyDown(e) {
+		// 27 = Esc key, means "pls stop doing thing"
+		if ( e.keyCode == 27 ) {
+			this.stopAllActivities();
+		}
 	}
 }
