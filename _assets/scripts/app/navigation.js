@@ -26,7 +26,7 @@ class navManager {
 		}, this);
 		
 		this.routeMatcher = new RegExp(
-			'^('  + routePatterns.join(')|(') + ')$', 
+			'^(('  + routePatterns.join(')|(') + '))$', 
 			'gi'
 		);
 		
@@ -72,8 +72,8 @@ class navManager {
 		if (matches == null) {
 			throw 404;
 		} else {
-			let routeIndex = matches.indexOf(matches[0], 1),
-			pageType       = this.dispatcher[routeIndex - 1],
+			let routeIndex = matches.indexOf(matches[0], 2),
+			pageType       = this.dispatcher[routeIndex - 2],
 			names          = {};
 			
 			// Prepares extracted URL parts for page e.g. Result ID
