@@ -35,7 +35,7 @@ class navManager {
 		
 		this.setPage(url);
 		
-		 setTimeout(this.deferredSetup.bind(this), 50);
+		setTimeout(this.deferredSetup.bind(this), 50);
 	}
 	
 	// Performs non-immediate app setup
