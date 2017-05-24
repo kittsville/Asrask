@@ -2,7 +2,7 @@
 
 class resultPage extends appPage {
 	loadPage() {
-		this.activityId = this.activityManager.startActivity(function(){console.log('stopped');});
+		this.activityId = this.activityManager.startActivity(this.stopPageLoad.bind(this));
 		
 		let uri = 'results/' + this.resultId,
 		params  = {
@@ -11,7 +11,17 @@ class resultPage extends appPage {
 		req = apiRequest(uri, params);
 	}
 	
+	stopPageLoad() {
+		this.stop = true;
+	}
+	
 	renderPage(response) {
+		if (this.stop == true) {
+			this.stop = false;
+			
+			return;
+		}
+		
 		let generator = new tableGenerator(this.navManager),
 		table         = generator.genUserTable(response.data);
 		

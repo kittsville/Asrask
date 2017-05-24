@@ -6,6 +6,7 @@ class appPage {
 		this.titleSuffix     = ' - Raofu';
 		this.titleElement    = document.getElementsByTagName('title')[0];
 		this.metaTitles      = document.getElementsByClassName('title');
+		this.stop            = false;
 		
 		for (name in names) {
 			this[name] = names[name];
