@@ -12,8 +12,6 @@ class resultPage extends appPage {
 	}
 	
 	renderPage(response) {
-		console.log(response);
-		
 		let generator = new tableGenerator(this.navManager),
 		table         = generator.genUserTable(response.data);
 		
