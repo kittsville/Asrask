@@ -1,8 +1,10 @@
 class appPage {
-	constructor(wrapper, activityManager, navManager, names) {
+	constructor(wrapper, activityManager, navManager, pageUrl, names, historyType) {
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
 		this.navManager      = navManager;
+		this.pageUrl         = pageUrl;
+		this.historyType     = historyType;
 		this.titleSuffix     = ' - Raofu';
 		this.titleElement    = document.getElementsByTagName('title')[0];
 		this.metaTitles      = document.getElementsByClassName('title');
@@ -19,13 +21,31 @@ class appPage {
 		this.wrapper.innerHTML = '';
 		
 		// Allows page to be blanked
-		if (content == null) {
-			return;
+		if (content != null) {
+			this.wrapper.appendChild(content);
+			
+			componentHandler.upgradeElements(this.wrapper);
 		}
 		
-		this.wrapper.appendChild(content);
+		let url = '/a/' + this.pageUrl;
 		
-		componentHandler.upgradeElements(this.wrapper);
+		if (!url.endsWith('/')) {
+			url += '/';
+		}
+		
+		switch (this.historyType) {
+			case 'new':
+				history.pushState(null, '', url);
+			break;
+			
+			case 'update':
+				history.replaceState(null, '', url);
+			break;
+			
+			case 'navigate':
+				// Do nothing when navigating through browser history
+			break;
+		}
 	}
 	
 	set title(text) {

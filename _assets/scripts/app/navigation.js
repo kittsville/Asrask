@@ -2,7 +2,6 @@ class navManager {
 	constructor(wrapper, activityManager){
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
-		this.appUrl          = '{{ site.app_url }}';
 		
 		// Ordered from most to least specific
 		this.pageTypes = [
@@ -30,12 +29,17 @@ class navManager {
 			'gi'
 		);
 		
-		let url = window.location.pathname.substring(3);
-		url     = url.substring(0, url.length-1);
+		if (!this._isAppUrl(window.location.href)) {
+			throw 'App somehow initialised on bad URL';
+		}
 		
-		this.setPage(url);
+		let url = this._extractAppUrl(window.location.pathname);
+		
+		this.setPage(url, 'update');
 		
 		setTimeout(this.deferredSetup.bind(this), 50);
+		
+		window.addEventListener('popstate', this.onBrowserNavigation.bind(this));
 	}
 	
 	// Performs non-immediate app setup
@@ -50,22 +54,22 @@ class navManager {
 	}
 	
 	onClick(e) {
-		let url = e.target.href;
-		
-		if (url.startsWith(this.appUrl)) {
+		if (this._isAppUrl(e.target.href)) {
 			e.preventDefault();
 			
-			url = url.substring(this.appUrl.length);
+			let url = this._extractAppUrl(e.target.pathname);
 			
-			if (url.endsWith('/')) {
-				url = url.substring(0, url.length - 1);
-			}
-			
-			this.setPage(url);
+			this.setPage(url, 'new');
 		}
 	}
 	
-	setPage(url) {
+	onBrowserNavigation(e) {
+		let url = this._extractAppUrl(window.location.pathname);
+		
+		this.setPage(url, 'navigate');
+	}
+	
+	setPage(url, historyType) {
 		this.routeMatcher.lastIndex = 0;
 		let matches = this.routeMatcher.exec(url);
 		
@@ -93,8 +97,24 @@ class navManager {
 				this.wrapper,
 				this.activityManager,
 				this,
-				names
+				url,
+				names,
+				historyType
 			);
 		}
+	}
+	
+	_isAppUrl(url) {
+		return url.startsWith('{{ site.app_url }}');
+	}
+	
+	_extractAppUrl(url) {
+		url = url.substring(3);
+		
+		if (url.endsWith('/')) {
+			url = url.substring(0, url.length - 1);
+		}
+		
+		return url;
 	}
 }
