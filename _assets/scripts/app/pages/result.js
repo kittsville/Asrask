@@ -7,8 +7,16 @@ class resultPage extends appPage {
 		let uri = 'results/' + this.resultId,
 		params  = {
 			success : this.renderPage.bind(this),
+			fail    : this.pageLoadFailed.bind(this),
+			error   : this.pageLoadFailed.bind(this),
 		},
 		req = apiRequest(uri, params);
+	}
+	
+	pageLoadFailed(httpRequest) {
+		alert('Failed to load Result page');
+		
+		this.activityManager.endActivity(this.activityId);
 	}
 	
 	stopPageLoad() {
