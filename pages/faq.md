@@ -23,6 +23,12 @@ No, because I didn't ban you\*. Raofu is a tool used by Reddit's moderators to i
 
 Unfortunately not. Owing to its potential to be misused, Raofu is only available to moderators and researchers.
 
+#### Q. Doesn't this violate my free speech?
+
+No, it doesn't. You don't have a right to use Reddit, just as you don't have a right to walk into someone's house. Reddit is a *private space* and those permitted to use it must do so by Reddit's terms.
+
+If you want to make a "some social networks are so large they are effectively public spaces" argument you're going to need to write to your local Member of Parliment/Congress and ask them to nationalise social networks. I'm also curious how you plan to square "free speech good" with "government controlling social networks good" without going full commie.
+
 #### Q. Why didn't Raofu identify a brigading user?
 
 Raofu isn't perfect and can both misidentify users and fail to identify brigading users. Brigading is understudied making it hard to improve Raofu's accuracy or objectively verify its performance. If you have any thoughts on how to improve Raofu then drop by [/r/Raofu](https://www.reddit.com/r/Raofu/).
