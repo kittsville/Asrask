@@ -74,7 +74,14 @@ class navManager {
 		let matches = this.routeMatcher.exec(url);
 		
 		if (matches == null) {
-			throw 404;
+			this.page = new notFoundPage(
+				this.wrapper,
+				this.activityManager,
+				this,
+				url,
+				{},
+				historyType
+			);
 		} else {
 			let routeIndex = matches.indexOf(matches[0], 2),
 			pageType       = this.dispatcher[routeIndex - 2],
