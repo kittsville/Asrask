@@ -1,5 +1,9 @@
 {% if page.title %}
-	{% assign page_title_long = page.title | append: ' - ' | append: site.title %}
+	{% if page.no_append_sitename %}
+		{% assign page_title_long = page.title %}
+	{% else %}
+		{% assign page_title_long = page.title | append: ' - ' | append: site.title %}
+	{% endif %}
 	{% assign page_title = page.title %}
 {% else %}
 	{% assign page_title_long = site.title %}
