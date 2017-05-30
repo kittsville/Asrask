@@ -16,7 +16,7 @@ function launchApp() {
 	activitySpinner = document.getElementById('activity'),
 	snackbarElement = document.getElementById('notifications'),
 	activityManager = new activityIndicator(activitySpinner),
-	noteManager     = new notificationManager(snackbarElement);
+	notManager     = new notificationManager(snackbarElement);
 	
 	this.nav = new navManager(wrapper, activityManager);
 }
