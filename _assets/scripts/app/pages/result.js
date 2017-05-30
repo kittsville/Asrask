@@ -14,13 +14,15 @@ class resultPage extends appPage {
 	}
 	
 	pageLoadFailed(httpRequest) {
-		alert('Failed to load Result page');
+		this.notManager.addNotification('Failed to load result');
 		
 		this.activityManager.endActivity(this.activityId);
 	}
 	
 	stopPageLoad() {
 		this.stop = true;
+		
+		this.notManager.addNotification('Cancelled loading result');
 	}
 	
 	renderPage(response) {
