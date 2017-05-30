@@ -18,5 +18,5 @@ function launchApp() {
 	activityManager = new activityIndicator(activitySpinner),
 	notManager     = new notificationManager(snackbarElement);
 	
-	this.nav = new navManager(wrapper, activityManager);
+	this.nav = new navManager(wrapper, activityManager, notManager);
 }

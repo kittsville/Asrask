@@ -1,7 +1,8 @@
 class navManager {
-	constructor(wrapper, activityManager){
+	constructor(wrapper, activityManager, notManager){
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
+		this.notManager      = notManager;
 		
 		// Ordered from most to least specific
 		this.pageTypes = [
@@ -77,6 +78,7 @@ class navManager {
 			this.page = new notFoundPage(
 				this.wrapper,
 				this.activityManager,
+				this.notManager,
 				this,
 				url,
 				{},
@@ -103,6 +105,7 @@ class navManager {
 			this.page = new pageType(
 				this.wrapper,
 				this.activityManager,
+				this.notManager,
 				this,
 				url,
 				names,
