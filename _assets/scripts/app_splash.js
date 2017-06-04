@@ -18,7 +18,6 @@ var splash = {
 		}
 	},
 	failed : function() {
-		console.log('here');
 		var fail = document.getElementById('fail');
 		
 		fail.style.display = 'none';
