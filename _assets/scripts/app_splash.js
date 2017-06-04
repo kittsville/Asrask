@@ -45,5 +45,6 @@ cb = function(){
 	bodyReq.send();
 },
 raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+window.onerror = splash.failed;
 if (raf) raf(cb);
 else window.addEventListener('load', cb);
