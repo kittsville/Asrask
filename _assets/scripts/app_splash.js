@@ -32,6 +32,14 @@ cb = function(){
 	var bodyReq, load = document.getElementById('load'),
 	old = document.getElementById('old');
 	
+	try {
+		eval('[].forEach.__proto__;class foo {}; fetch.__proto__;');
+	} catch (e) {
+		load.style.display = 'none';
+		old.style.display = 'block';
+		return;
+	}
+	
 	var bodyReq = new XMLHttpRequest();
 	
 	bodyReq.onreadystatechange = function() {
