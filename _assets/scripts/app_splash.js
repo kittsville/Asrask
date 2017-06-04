@@ -16,6 +16,13 @@ var splash = {
 			}, 200);
 		}
 	},
+	failed : function() {
+		console.log('here');
+		var fail = document.getElementById('fail');
+		
+		fail.style.display = 'none';
+		fail.style.display = 'block';
+	},
 	element : document.getElementById('splash'),
 	doneStages : 0,
 	stages : 2,

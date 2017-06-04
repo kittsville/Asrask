@@ -36,9 +36,13 @@ sitemap: false
 		<p>{{ site.title }} runs best on the latest versions of <a href="https://www.mozilla.org/en-GB/firefox/new/">Firefox</a> or <a href="https://www.google.com/chrome/">Google Chrome</a>.</p>
 		<p>It would be great if this wasn't the case, but that's when happens when 1 person maintains the whole site.</p>
 	</div>
+	<div id="fail">
+		<p>Failed to load {{ site.title }}</p>
+		<p>Try reloading your browser?</p>
+	</div>
 </div>
 <!-- The garbage zone -->
 <script>{% asset app_splash.js %}</script>
-{% javascript app async onload="splash.loaded()" onerror="alert('Failed to load Raofu')" %}
+{% javascript app async onload="splash.loaded()" onerror="splash.failed()" %}
 </body>
 </html>
