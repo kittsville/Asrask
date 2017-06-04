@@ -38,50 +38,7 @@ sitemap: false
 	</div>
 </div>
 <!-- The garbage zone -->
-<script>
-var splash = {
-	loaded : function() {
-		++splash.doneStages;
-		
-		bar.style.width = splash.doneStages / splash.stages * 100 + '%';
-		
-		if (splash.doneStages === splash.stages) {
-			document.body.insertAdjacentHTML('beforeend', splash.body);
-			
-			componentHandler.upgradeDom();
-			launchApp();
-			
-			setTimeout(function(){
-				document.body.removeChild(splash.element);
-				delete splash;
-			}, 200);
-		}
-	},
-	element : document.getElementById('splash'),
-	doneStages : 0,
-	stages : 2,
-	bar : document.getElementById('bar'),
-},
-cb = function(){
-	var bodyReq, load = document.getElementById('load'),
-	old = document.getElementById('old');
-	
-	var bodyReq = new XMLHttpRequest();
-	
-	bodyReq.onreadystatechange = function() {
-		if (bodyReq.readyState === 4 && bodyReq.status === 200) {
-			splash.body = bodyReq.responseText;
-			splash.loaded();
-		}
-	}
-	
-	bodyReq.open("GET","/assets/app-body.html", true);
-	bodyReq.send();
-},
-raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-if (raf) raf(cb);
-else window.addEventListener('load', cb);
-</script>
+<script>{% asset app_splash.js %}</script>
 {% javascript app async onload="splash.loaded()" onerror="alert('Failed to load Raofu')" %}
 </body>
 </html>
