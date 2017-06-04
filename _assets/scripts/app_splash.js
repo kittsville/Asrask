@@ -9,6 +9,7 @@ var splash = {
 			
 			componentHandler.upgradeDom();
 			launchApp();
+			window.onerror = '';
 			
 			setTimeout(function(){
 				document.body.removeChild(splash.element);
