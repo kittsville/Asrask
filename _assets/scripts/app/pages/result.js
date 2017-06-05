@@ -8,7 +8,10 @@ class resultPage extends appPage {
 		
 		new apiRequest(
 			apiPath,
-			this.renderPage.bind(this),
+			{
+				success : this.renderPage.bind(this),
+				error   : this.pageLoadFailed.bind(this),
+			},
 			this,
 			this.notManager
 		);
