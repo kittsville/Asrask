@@ -58,6 +58,8 @@ class navManager {
 		if (this._isAppUrl(e.target.href)) {
 			e.preventDefault();
 			
+			this.activityManager.stopAllActivities();
+			
 			let url = this._extractAppUrl(e.target.pathname);
 			
 			this.setPage(url, 'new');
