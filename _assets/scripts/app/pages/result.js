@@ -4,13 +4,14 @@ class resultPage extends appPage {
 	loadPage() {
 		this.activityId = this.activityManager.startActivity(this.stopPageLoad.bind(this));
 		
-		let uri = 'results/' + this.resultId,
-		params  = {
-			success : this.renderPage.bind(this),
-			fail    : this.pageLoadFailed.bind(this),
-			error   : this.pageLoadFailed.bind(this),
-		},
-		req = apiRequest(uri, params);
+		let apiPath = 'results/' + this.resultId;
+		
+		new apiRequest(
+			apiPath,
+			this.renderPage.bind(this),
+			this,
+			this.notManager
+		);
 	}
 	
 	pageLoadFailed(httpRequest) {

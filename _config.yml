@@ -26,7 +26,7 @@ app_navigation:
     url: /terms/
   - title: Privacy
     url: /privacy/
-rendant_api: http://api.raofu.localhost/v1
+rendant_api: http://api.raofu.localhost/v1/
 app_url: http://raofu.localhost/a/
 exclude: ['LICENSE', 'README.md']
 markdown: kramdown
