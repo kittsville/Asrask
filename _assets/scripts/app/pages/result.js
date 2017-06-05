@@ -27,8 +27,6 @@ class resultPage extends appPage {
 	
 	stopPageLoad() {
 		this.stop = true;
-		
-		this.notManager.addNotification('Cancelled loading result');
 	}
 	
 	renderPage(response) {
