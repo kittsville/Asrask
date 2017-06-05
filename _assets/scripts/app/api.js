@@ -1,12 +1,17 @@
 class apiRequest {
-	constructor(endpoint, params, page, notManager) {
-		this.page       = page;
-		this.notManager = notManager;
+	constructor(endpoint, params, page, activityManager, notManager) {
+		this.page            = page;
+		this.activityManager = activityManager;
+		this.notManager      = notManager;
 		
 		this.onSuccess = params.success;
 		
 		if (params.hasOwnProperty('error')) {
 			this.onError = params.error;
+		}
+		
+		if (params.hasOwnProperty('activityId')) {
+			this.activityId = params.activityId;
 		}
 		
 		// e.g. api.example.com/v1/
@@ -39,13 +44,25 @@ class apiRequest {
 	
 	onNotJson() {
 		this.notManager.addNotification('The server returned an invalid response');
+		
+		this.stopActivity();
 	}
 	
 	onError() {
 		this.notManager.addNotification('The server returned an error');
+		
+		this.stopActivity();
 	}
 	
 	onFail() {
 		this.notManager.addNotification('Request failed. Check your internet connection');
+		
+		this.stopActivity();
+	}
+	
+	stopActivity() {
+		if (this.hasOwnProperty('activityId')) {
+			this.activityManager.endActivity(this.activityId);
+		}
 	}
 }

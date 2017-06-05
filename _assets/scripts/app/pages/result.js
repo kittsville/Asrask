@@ -9,10 +9,12 @@ class resultPage extends appPage {
 		new apiRequest(
 			apiPath,
 			{
-				success : this.renderPage.bind(this),
-				error   : this.pageLoadFailed.bind(this),
+				success    : this.renderPage.bind(this),
+				error      : this.pageLoadFailed.bind(this),
+				activityId : this.activityId,
 			},
 			this,
+			this.activityManager,
 			this.notManager
 		);
 	}
