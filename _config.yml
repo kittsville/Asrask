@@ -18,9 +18,9 @@ navigation:
   - title: Privacy
     url: /privacy/
 app_navigation:
-  - title: Results
+  - title: My Results
     url: /a/results/
-  - title: New
+  - title: New Result
     url: /a/results/new/
   - title: Terms of Service
     url: /terms/
