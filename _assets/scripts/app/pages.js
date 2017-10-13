@@ -1,4 +1,4 @@
-class appPage {
+class AppPage {
 	constructor(wrapper, activityManager, notManager, navManager, pageUrl, names, historyType) {
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;

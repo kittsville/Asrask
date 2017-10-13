@@ -1,4 +1,4 @@
-class notificationManager {
+class NotificationManager {
 	constructor(snackbarElement) {
 		this.snackbar      = snackbarElement.MaterialSnackbar;
 		this.undoCallbacks = {}; // Keeps tracks of which undo callback have been called

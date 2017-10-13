@@ -1,6 +1,6 @@
 #= require app/pages
 
-class notFoundPage extends appPage {
+class NotFoundPage extends AppPage {
 	loadPage() {
 		let page = cE('div', 'page error-page'),
 		styles   = cE('style'),

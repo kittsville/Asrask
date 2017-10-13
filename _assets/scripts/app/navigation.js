@@ -1,4 +1,4 @@
-class navManager {
+class NavManager {
 	constructor(wrapper, activityManager, notManager){
 		this.wrapper         = wrapper;
 		this.activityManager = activityManager;
@@ -6,10 +6,10 @@ class navManager {
 
 		// Ordered from most to least specific
 		this.pageTypes = [
-			newResultPage,
-			resultPage,
-			resultsPage,
-			homePage,
+			NewResultPage,
+			ResultPage,
+			ResultsPage,
+			HomePage,
 		];
 
 		this.dispatcher = {};

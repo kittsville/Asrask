@@ -1,7 +1,7 @@
 #= require app/pages
 #= require app/generators/form
 
-class newResultPage extends appPage {
+class NewResultPage extends AppPage {
 	loadPage() {
 		this.title = 'New Result';
 
@@ -23,10 +23,10 @@ class newResultPage extends appPage {
 		card.appendChild(helpText);
 
 		// Form Data Entry
-		let aFormGenerator = new formGenerator(this.navManager),
+		let formGenerator = new FormGenerator(this.navManager),
 		form               = cE('form'),
-		threadInput        = aFormGenerator.textInput('threadUrl', 'Thread URL'),
-		subInput           = aFormGenerator.textInput('subName', "Name of brigading subreddit");
+		threadInput        = formGenerator.textInput('threadUrl', 'Thread URL'),
+		subInput           = formGenerator.textInput('subName', "Name of brigading subreddit");
 
 		form.appendChild(threadInput);
 		form.appendChild(subInput);

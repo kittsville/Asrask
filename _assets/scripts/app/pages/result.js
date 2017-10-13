@@ -1,6 +1,6 @@
 #= require app/pages
 
-class resultPage extends appPage {
+class ResultPage extends AppPage {
 	loadPage() {
 		this.activityId = this.activityManager.startActivity(this.stopPageLoad.bind(this));
 
@@ -36,7 +36,7 @@ class resultPage extends appPage {
 			return;
 		}
 
-		let generator = new tableGenerator(this.navManager),
+		let generator = new TableGenerator(this.navManager),
 		table         = generator.genUserTable(response.data);
 
 		this.setPage(table);

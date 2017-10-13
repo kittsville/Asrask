@@ -1,6 +1,6 @@
 #= require app/generator
 
-class tableGenerator extends generator {
+class TableGenerator extends Generator {
 	constructor(navManager) {
 		super(navManager);
 

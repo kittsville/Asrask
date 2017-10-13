@@ -1,6 +1,6 @@
 #= require app/pages
 
-class resultsPage extends appPage {
+class ResultsPage extends AppPage {
 	loadPage() {
 		console.log('Loaded results page');
 

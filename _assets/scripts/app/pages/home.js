@@ -1,6 +1,6 @@
 #= require app/pages
 
-class homePage extends appPage {
+class HomePage extends AppPage {
 	loadPage() {
 		console.log('Loaded homepage');
 

@@ -1,4 +1,4 @@
-class activityIndicator {
+class ActivityIndicator {
 	constructor(activitySpinner) {
 		this.spinner    = activitySpinner;
 		this.nextId     = 0;

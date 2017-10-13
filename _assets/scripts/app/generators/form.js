@@ -1,6 +1,6 @@
 #= require app/generator
 
-class formGenerator extends generator {
+class FormGenerator extends Generator {
   textInput(id, labelText) {
     let wrapper = cE('div', 'mdl-textfield mdl-js-textfield'),
     input = cE('input', 'mdl-textfield__input'),

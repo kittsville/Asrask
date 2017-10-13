@@ -1,4 +1,4 @@
-class generator {
+class Generator {
 	constructor(navManager) {
 		this.navManager = navManager;
 	}
