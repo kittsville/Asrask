@@ -5,21 +5,25 @@
 main {
 	background: url(/assets/images/background.png) no-repeat center center;
 	background-size: 250px;
-	
+
 	.is-small-screen & {
 		background-size: 200px;
 	}
 }
 
+#page-wrapper {
+	margin-top: 10px;
+}
+
 table.brigading-users {
 	th {
 		height: 34px;
-		
+
 		&[rowspan="2"] {
 			vertical-align: top;
 			line-height: 44px;
 		}
-		
+
 		&.participation {
 			text-align: center;
 			padding-bottom: 0px;

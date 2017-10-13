@@ -2,7 +2,7 @@
 <header class="mdl-layout__header mdl-layout__header--scroll">
 	<div class="mdl-layout__header-row">
 		<!-- App name or current page -->
-		<span id="page-name" class="mdl-layout-title">{{ page.title }}</span>
+		<span id="page-name" class="mdl-layout-title title">{{ page.title }}</span>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Top Right Navigation -->
@@ -11,7 +11,7 @@
 			<a class="mdl-navigation__link" href="/privacy/">Privacy</a>
 		</nav>
 	</div>
-	
+
 	{% if include.progress_bar %}
 	<!-- Header Activity Bar -->
 	<div id="activity" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>

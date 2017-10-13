@@ -1,4 +1,5 @@
 #= require material.min
+#= require app/helpers
 #= require app/notification
 #= require app/navigation
 #= require app/generators/table
@@ -17,6 +18,6 @@ function launchApp() {
 	snackbarElement = document.getElementById('notifications'),
 	activityManager = new activityIndicator(activitySpinner),
 	notManager     = new notificationManager(snackbarElement);
-	
+
 	this.nav = new navManager(wrapper, activityManager, notManager);
 }
