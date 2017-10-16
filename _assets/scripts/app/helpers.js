@@ -1,7 +1,9 @@
-function cE(type, classes = '') {
+function cE(type, classes = null) {
   let element = document.createElement(type);
 
-  element.classList = classes;
+  if (classes) {
+    element.classList = classes;
+  }
 
   return element;
 }
