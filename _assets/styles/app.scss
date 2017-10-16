@@ -32,7 +32,13 @@ table.brigading-users {
 }
 
 .mdl-card form {
-	padding: 0px 16px 16px 16px;
+	& > div {
+		padding: 16px;
+	}
+
+	.field-wrap {
+		padding-top: 0px;
+	}
 
 	.mdl-textfield {
 		padding: 10px 0px;
