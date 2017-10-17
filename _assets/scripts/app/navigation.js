@@ -77,7 +77,7 @@ class NavManager {
 		let matches = this.routeMatcher.exec(url);
 
 		if (matches == null) {
-			this.page = new notFoundPage(
+			this.page = new NotFoundPage(
 				this.wrapper,
 				this.activityManager,
 				this.notManager,
