@@ -12,6 +12,8 @@ class FormGenerator extends Generator {
     label.for = id;
     label.textContent = labelText;
 
+    wrapper.inputField = input;
+
     wrapper.appendChild(input);
     wrapper.appendChild(label);
 

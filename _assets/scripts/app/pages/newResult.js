@@ -26,9 +26,9 @@ class NewResultPage extends AppPage {
 		let formGenerator = new FormGenerator(this.navManager),
 		fieldWrap         = cE('div', 'field-wrap'),
 		form              = cE('form'),
-		submitWrapper     = cE('div', 'mdl-card__actions mdl-card--border'),
-		submitButton      = cE('button', 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored');
+		submitWrapper     = cE('div', 'mdl-card__actions mdl-card--border');
 
+		this.submitButton      = cE('button', 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored');
 		this.threadInput  = formGenerator.textInput('threadUrl', 'Thread URL');
 		this.subInput     = formGenerator.textInput('subName', "Name of brigading subreddit");
 
@@ -36,15 +36,73 @@ class NewResultPage extends AppPage {
 		fieldWrap.appendChild(this.subInput);
 		form.appendChild(fieldWrap);
 
-		submitButton.textContent = 'Analyse Thread';
-		submitButton.type        = 'submit';
+		this.submitButton.textContent = 'Analyse Thread';
+		this.submitButton.type        = 'submit';
+		form.addEventListener('submit', this.onSubmit.bind(this));
 
-		submitWrapper.appendChild(submitButton);
+		submitWrapper.appendChild(this.submitButton);
 		form.appendChild(submitWrapper);
 
 		card.appendChild(form);
 
 		this.setPage(card);
+	}
+
+	onSubmit(event) {
+		event.preventDefault();
+
+		let apiPath = 'results/new',
+		payload     = {
+			'thread'    : this.threadInput.inputField.value,
+			'subreddit' : this.subInput.inputField.value
+		};
+
+		this.activityId = this.activityManager.startActivity(function(){console.log('Stopped page');});
+		this._lockForm();
+		setTimeout(this._unlockForm.bind(this), 3000);
+		new apiRequest(
+			apiPath,
+			{
+				success    : this.creationSucceeded.bind(this),
+				error      : this.creationFailed.bind(this),
+				activityId : this.activityId,
+				method     : 'POST',
+				body       : payload
+			},
+			this,
+			this.activityManager,
+			this.notManager
+		);
+	}
+
+	creationSucceeded(response) {
+		this.activityManager.endActivity(this.activityId);
+
+		this.notManager.addNotification('Starting thread analysis');
+
+		let resultPageUrl = 'results/' + response.data.url;
+		this.navManager.setPage(resultPageUrl, 'new');
+	}
+
+	creationFailed() {
+		this._unlockForm();
+		this.activityManager.endActivity(this.activityId);
+
+		this.notManager.addNotification('Failed to create result');
+	}
+
+	// Prevents input/form submission
+	_lockForm() {
+		this.threadInput.inputField.disabled = true;
+		this.subInput.inputField.disabled = true;
+		this.submitButton.disabled = true;
+	}
+
+	// Allows input/form submission
+	_unlockForm() {
+		this.threadInput.inputField.disabled = false;
+		this.subInput.inputField.disabled = false;
+		this.submitButton.disabled = false;
 	}
 
 	static get route() {
